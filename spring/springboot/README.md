@@ -1,8 +1,6 @@
 # Spring Boot
 
 1. [快速搭建Spring Boot项目](#qs)
-   * [idea](#qs_idea)
-   * [eclipse](#qs_eclipse)
 2. [Spring Boot配置文件](#cf) 
 3. [个人喜好配置](#ll)
 
@@ -10,9 +8,7 @@
 
 ## <span id="qs">快速搭建Spring Boot项目</span>
 
-### <span id="qs_idea">idea</span>
-
-​	从Spring Initializr建立Spring Boot项目的教程网上有很多，因此不多做赘述，这里从零开始建立Spring Boot项目。
+​	idea从Spring Initializr建立Spring Boot项目的教程网上有很多，因此不多做赘述，这里从零开始建立Spring Boot项目。
 
 ​	\> 新建一个Maven项目
 
@@ -71,8 +67,6 @@ public class Application {
 ```
 
 \> 一个最简单的Spring Boot项目就建好了
-
-### <span id="qs_eclipse">eclipse</span>
 
 
 
@@ -147,11 +141,11 @@ pom.xml
 ```
 ／－
 
-　｜－config/		//配置文件目录
+　｜－config/　　　　//配置文件目录
 
-　｜－webapp/	//静态资源目录
+　｜－webapp/　　　//静态资源目录
 
-　｜－src/			//源码目录
+　｜－src/　　　　　//源码目录
 
 ```properties
 application.yml
