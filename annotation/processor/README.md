@@ -5,8 +5,9 @@
   2. [编译时注解](#p_class) ：**注解解析器**
      1. [注册解析器](#p_c_regist)
      2. [虚处理器](#p_c_ap)
+     3. [处理器](#p_c_process)
+     4. [代码生成](#p_c_code)
   3. [运行时注解](#p_runtime)
-
 
 　　大家都知道注解的运行机制有3种：源码注解、编译期注解、运行时注解。网上有很多关于运行时注解的教程，但是却很少有关于了解源码注解和编译期注解是如何发挥作用的说明，即使有也是语焉不详。
 
@@ -133,10 +134,13 @@ import javax.lang.model.util.Elements;
 import javax.lang.model.util.Types;
 
 public class TestProcessor extends AbstractProcessor {
-
+	// 用于处理TypeMirror的工具类
     private Types typeUtils;
+    // 使用filer可以创建文件
     private Filer filer;
+    // 用于输出编译信息
     private Messager messager;
+    // 用于处理Element的工具类
     private Elements elementUtils;
 
     @Override
@@ -237,6 +241,35 @@ public class TestProcessor extends AbstractProcessor {}
 　　相当于每个处理器的主函数main，
 
 　　经测试，返回true或false时并不影响编译通过，不知道这个返回值的作用？
+
+
+
+### <span id="p_c_process">处理器</span>
+
+　　[一篇很详细的参考文档](https://blog.csdn.net/github_35180164/article/details/52055994)
+
+　　在处理器的眼中，java文件只是一个文本文件，源代码的每一部分都是一个特定类型的Element，使用一种类似于解析XML文本一样的解析方式来结构化的处理源代码。
+
+```java
+package xxx.xxx; // PackageElement
+
+public class TestClass{ // TypeElement
+    private int a; // VariableElement
+    private TestClass tc; // VariableElement
+    public TestClass(){} // ExecuteableElement
+    public void method1( // ExecuteableElement
+    					int b // TypeElement
+    					){}
+}
+```
+
+
+
+### <span id="p_c_code">代码生成</span>
+
+　　在编写代码生成模块时稍感吃力，因此，尝试阅读lombok源码尝试有所突破：[Lombok][lombok]
+
+[lombok]: lombok
 
 
 

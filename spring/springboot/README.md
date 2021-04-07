@@ -3,6 +3,13 @@
 1. [快速搭建Spring Boot项目](#qs)
 2. [Spring Boot配置文件](#cf) 
 3. [个人喜好配置](#ll)
+4. [springboot启动机制][boot]
+5. [自定义spring组件][plugin]
+
+
+
+[boot]: boot
+[plugin]: plugin
 
 
 
@@ -166,3 +173,6 @@ spring:
 #    map-underscore-to-camel-case: true
 ```
 
+
+
+[boot]: 
