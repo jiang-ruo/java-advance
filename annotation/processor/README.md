@@ -267,7 +267,7 @@ public class TestClass{ // TypeElement
 
 ### <span id="p_c_code">代码生成</span>
 
-　　在编写代码生成模块时稍感吃力，因此，尝试阅读lombok源码尝试有所突破：[Lombok][lombok]
+　　在编写代码生成模块时先参考lombok源码（待记录）：[Lombok][lombok]
 
 [lombok]: lombok
 
