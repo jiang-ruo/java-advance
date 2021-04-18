@@ -23,6 +23,10 @@ resources/META-INF下的
 
 spring.factories文件
 
+接口=实现类,实现类,实现类
+
+一般使用自定义的bean需要使用org.springframework.boot.autoconfigure.EnableAutoConfiguration做为键才能加入队列中，不需要@Service之类的注解
+
 ```properties
 # PropertySource Loaders
 org.springframework.boot.env.PropertySourceLoader=\

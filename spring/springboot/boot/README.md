@@ -69,6 +69,8 @@ public class QcApplication implements GenericApplicationListener {
 
 2、springboot @Order注解
 
+ApplicationRunner和CommandLineRunner
+
 ```java
 package xlo.qc.init;
 

@@ -2,7 +2,7 @@
 
 1. [快速搭建Spring Boot项目](#qs)
 2. [Spring Boot配置文件](#cf) 
-3. [个人喜好配置](#ll)
+3. [个人配置](#ll)
 4. [springboot启动机制][boot]
 5. [自定义spring组件][plugin]
 
@@ -81,7 +81,7 @@ public class Application {
 
 
 
-## <span id="ll">个人喜好配置</span>
+## <span id="ll">个人配置</span>
 
 ```xml
 pom.xml
