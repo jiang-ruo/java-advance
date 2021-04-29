@@ -136,6 +136,8 @@ resources/META-INF下的
 
 additional-spring-configuration-metadata.json文件
 
+或spring-configuration-metadata.json文件
+
 ```json
 {
   "properties": [
