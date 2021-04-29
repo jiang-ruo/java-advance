@@ -10,10 +10,14 @@ java进阶学习的一些笔记
   1. SpringIOC
   2. SpringAOP
   3. [Spring Boot][sb]
+  4. Spring Cloud
+     * Spring Cloud Netflix
 * jvm/devtools
 * [Iterator 迭代器][iterator]
+* [Validation校验器][validation]
 
 [annotation]: annotation
 [sb]: spring/springboot
 [iterator]: Iterator
 
+[validation]: validation

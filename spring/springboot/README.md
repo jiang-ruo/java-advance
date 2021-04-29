@@ -1,13 +1,14 @@
 # Spring Boot
 
 1. [快速搭建Spring Boot项目](#qs)
-2. [Spring Boot配置文件](#cf) 
+2. [Spring Boot配置文件][conf]
 3. [个人配置](#ll)
 4. [springboot启动机制][boot]
 5. [自定义spring组件][plugin]
 
 
 
+[conf]: configuration
 [boot]: boot
 [plugin]: plugin
 
@@ -73,11 +74,11 @@ public class Application {
 }
 ```
 
-\> 一个最简单的Spring Boot项目就建好了
+\> 一个简单的Spring Boot项目就建好了
 
 
 
-## <span id="cf">Spring Boot配置文件</span>
+## [<span>Spring Boot配置文件</span>][conf]
 
 
 
