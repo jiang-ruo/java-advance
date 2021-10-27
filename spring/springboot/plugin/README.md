@@ -138,20 +138,97 @@ additional-spring-configuration-metadata.json文件
 
 或spring-configuration-metadata.json文件
 
-```json
+```java
+//最简配置
 {
-  "properties": [
+"properties": [
 	{
         //自定义配置名，必须
-	  "name": "spring.qc.locations",
+	  "name": "spring.xlo.qc.log-level",
         //配置信息的数据类型，可省略
 	  "type": "java.lang.String",
         //描述信息，可省略
 	  "description": "包名，如果存在多个包，以,分割",
         //需要注入的类中，可省略
-	  "sourceType": "xlo.qc.init.QcApplication"
+	  "sourceType": "xlo.qc.builder.QcConfig",
+        //说明默认值的字段，没有任何实际作用
+	  "defaultValue": "info"
 	}
+      // hints可省略，用于定义默认值
   ]
 }
 ```
+
+
+
+```json
+{
+  // group 完全不知道有啥用的属性，可以直接忽略，
+  "group": [
+	{
+	  "name": "spring.xlo.qc",
+	  "type": "xlo.qc.builder.QcConfig",
+	  "sourceType": "xlo.qc.builder.QcConfig"
+	}
+  ], "properties": [
+	{
+        //自定义配置名，必须
+	  "name": "spring.xlo.qc.log-level",
+        //配置信息的数据类型，可省略
+	  "type": "java.lang.String",
+        //描述信息，可省略
+	  "description": "包名，如果存在多个包，以,分割",
+        //需要注入的类中，可省略
+	  "sourceType": "xlo.qc.builder.QcConfig",
+        //说明默认值的字段，没有任何实际作用
+	  "defaultValue": "info"
+	}
+      // hints可省略，用于定义默认值
+  ], "hints": [
+    {
+      // 定义log-level可选的值
+	  "name": "spring.xlo.qc.log-level",
+	  "values": [
+		{
+		  "value": "info",
+          "description": "说明"
+		},
+		{
+		  "value": "warning"
+		},
+		{
+		  "value": "error"
+		}
+	  ]
+    }
+  ]
+}
+```
+
+貌似idea可以直接自动生成该文件：https://www.cnblogs.com/yangtianle/p/9065365.html
+
+https://sg.jianshu.io/p/fa396f022e86
+
+```java
+// 使用@value("${}")注解，则必须在yml中配置该属性，但是有些可以使用默认值不必配置，因此可以使用一下方法来注入
+// https://www.cnblogs.com/jimoer/p/11374229.html
+@Data
+@Configuration
+// ignoreInvalidFields = true,当用户输入错误的值时，继续执行
+@ConfigurationProperties(prefix = "spring.xlo.qc", ignoreInvalidFields = true)
+public class QcConfig {
+
+    // 支持logLevel支持的属性：
+    // logLevel
+    // loglevel
+    // log_level
+    // log-level
+    // LOG_LEVEL
+	private String logLevel = "info";
+
+}
+
+```
+
+
 

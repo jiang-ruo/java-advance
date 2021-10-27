@@ -1,0 +1,16 @@
+server:
+  port: 80
+  
+spring:
+  #  配置静态资源位置
+  web:
+    resources:
+      static-locations: file:webapp/
+
+#mybatis:
+#  mapper-locations: file:config/dao/*.xml
+#  configuration:
+#    #    驼峰转下划线
+#    map-underscore-to-camel-case: true
+
+

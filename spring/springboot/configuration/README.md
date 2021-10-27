@@ -7,7 +7,7 @@
 
 属性值之后跟随的值为默认值
 
-## <span id="cp">Spring Core Properties
+## <span id="cp">Spring Core Properties</span>
 
 概要：
 
